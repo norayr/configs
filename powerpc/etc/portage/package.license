@@ -1,0 +1,2 @@
+# required by b43-firmware (argument)
+>=sys-firmware/b43-firmware-5.100.138 Broadcom

@@ -1,0 +1,32 @@
+# required by sys-boot/yaboot-1.3.17-r2
+# required by yaboot (argument)
+=sys-fs/e2fsprogs-1.42.7 static-libs
+net-wireless/wpa_supplicant -X
+# required by media-libs/mesa-9.1.6
+# required by x11-base/xorg-server-1.14.3-r2[-minimal]
+# required by x11-drivers/xf86-input-keyboard-1.7.0
+# required by x11-base/xorg-drivers-1.14[input_devices_keyboard]
+>=dev-libs/libxml2-2.9.1-r1 python
+#firefox
+=dev-lang/python-2.7.5-r3 sqlite
+#primecoin-qt
+dev-libs/leveldb -snappy
+
+
+net-misc/tigervnc server
+
+
+sys-devel/llvm clang
+
+dev-lang/fpc source
+
+
+#x11-misc/redshift gtk
+# required by x11-libs/glamor-0.6.0
+# required by x11-drivers/xf86-video-ati-7.3.0[glamor]
+# required by x11-base/xorg-drivers-1.15[video_cards_radeon]
+# required by x11-base/xorg-server-1.14.5[xorg]
+# required by net-misc/tigervnc-1.3.1[xorgmodule,server]
+# required by @selected
+# required by @world (argument)
+=media-libs/mesa-10.0.4 gbm

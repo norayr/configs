@@ -1,0 +1,3 @@
+# required by redshift (argument)
+=x11-misc/redshift-1.8 **
+=dev-inferno/inferno-20130403-r3 **
