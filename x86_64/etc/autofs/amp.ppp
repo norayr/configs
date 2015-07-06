@@ -1,0 +1,1 @@
+noch   -rsize=8192,wsize=8192,soft,timeo=30,rw        10.0.0.1:/home/noch/amp

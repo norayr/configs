@@ -1,0 +1,1 @@
+/amp	-rsize=8192,wsize=8192,soft,timeo=30,rw	10.23.23.1:/export/amp
