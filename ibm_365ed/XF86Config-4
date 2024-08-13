@@ -1,0 +1,106 @@
+Section "ServerLayout"
+	Identifier     "XFree86 Configured"
+	Screen      0  "Screen0" 0 0
+	InputDevice    "Mouse0" "CorePointer"
+	InputDevice    "Keyboard0" "CoreKeyboard"
+EndSection
+
+Section "Files"
+	RgbPath      "/usr/X11R6/lib/X11/rgb"
+	ModulePath   "/usr/X11R6/lib/modules"
+	FontPath     "/usr/X11R6/lib/X11/fonts/misc/"
+	FontPath     "/usr/X11R6/lib/X11/fonts/Speedo/"
+	FontPath     "/usr/X11R6/lib/X11/fonts/Type1/"
+	FontPath     "/usr/X11R6/lib/X11/fonts/CID/"
+	FontPath     "/usr/X11R6/lib/X11/fonts/75dpi/"
+	FontPath     "/usr/X11R6/lib/X11/fonts/100dpi/"
+EndSection
+
+Section "Module"
+	Load  "pex5"
+	Load  "record"
+	Load  "extmod"
+	Load  "dbe"
+	Load  "dri"
+	Load  "glx"
+	Load  "xie"
+	Load  "type1"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Keyboard0"
+	Driver      "keyboard"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Mouse0"
+	Driver      "mouse"
+	Option      "Protocol" "PS/2"
+	Option      "Device" "/dev/psaux"
+	Option	    "BaudRate" "1200"
+	Option	    "Emulate3Timeout" "50"
+	Option	    "Resolution" "200"
+EndSection
+
+Section "Monitor"
+	Identifier   "Monitor0"
+	VendorName   "Monitor Vendor"
+	ModelName    "Monitor Model"
+EndSection
+
+Section "Device"
+	### Available Driver options are:-
+        ### Values: <i>: integer, <f>: float, <bool>: "True"/"False",
+        ### <string>: "String", <freq>: "<f> Hz/kHz/MHz"
+        ### [arg]: arg optional
+        #Option     "Linear"             	# [<bool>]
+        #Option     "NoAccel"            	# [<bool>]
+        #Option     "HWclocks"           	# [<bool>]
+        #Option     "SWcursor"           	# [<bool>]
+        #Option     "HWcursor"           	# [<bool>]
+        #Option     "STN"                	# [<bool>]
+        #Option     "UseModeline"        	# [<bool>]
+        #Option     "NoStretch"          	# [<bool>]
+        #Option     "LcdCenter"          	# [<bool>]
+        #Option     "MMIO"               	# [<bool>]
+        #Option     "SuspendHack"        	# [<bool>]
+        #Option     "FixPanelSize"       	# [<bool>]
+        #Option     "18BitBus"           	# [<bool>]
+        #Option     "ShowCache"          	# [<bool>]
+        #Option     "ShadowFB"           	# [<bool>]
+        #Option     "Rotate"             	# [<str>]
+        #Option     "SetMclk"            	# <freq>
+        #Option     "FPClock8"           	# <freq>
+        #Option     "FPClock16"          	# <freq>
+        #Option     "FPClock24"          	# <freq>
+	Identifier  "Card0"
+	Driver      "chips"
+	BusID       "ISA"
+EndSection
+
+Section "Screen"
+	Identifier "Screen0"
+	Device     "Card0"
+	Monitor    "Monitor0"
+	DefaultDepth 16
+	SubSection "Display"
+		Depth     1
+	EndSubSection
+	SubSection "Display"
+		Depth     4
+	EndSubSection
+	SubSection "Display"
+		Depth     8
+	EndSubSection
+	SubSection "Display"
+		Depth     15
+	EndSubSection
+	SubSection "Display"
+		Depth     16
+		Modes "800x600" "640x480"
+	EndSubSection
+	SubSection "Display"
+		Depth     24
+	EndSubSection
+EndSection
+
